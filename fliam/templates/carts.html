@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        h2.after
+        {
+            float: left;
+        }
+        .one
+        {
+            float: left;
+            padding-left: 250px;
+        }
+        .buy
+        {
+            margin-top: 150px;
+            margin-left: 600px;
+            position:absolute;
+        }
+    </style>
+    <title>cart</title>
+</head>
+<body>
+        {% for cart in cartitems%}
+        <div class="one">
+        <h2>{{cart.name}}</h2>
+        <h2>{{cart.price}}</h2>
+        </div>
+        {% endfor %}
+
+        <form action="buy" method="POST" class="buy">
+            {% csrf_token %}
+            <button>BUY ITEMS</button>
+        </form>
+</body>
+</html>
